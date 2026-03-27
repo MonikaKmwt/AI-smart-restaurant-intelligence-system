@@ -1,5 +1,4 @@
 
-
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -70,10 +69,14 @@ def get_similar_restaurants(df, similarity_matrix, restaurant_name, top_n=5):
         "average_price", "average_delivery_time"
     ]]
 
-def main():
+def load_everything():
     df = load_data()
-    df = cuisine_text(df)
     similarity_matrix = compute_similarity_matrix(df)
+    return df, similarity_matrix
+
+def main():
+    df = cuisine_text(df)
+    df, similarity_matrix = load_everything()
     #print("\n-------------  Similarity Matrix is Created.    ---------------")
 
     print("\n---------------   Similar Restaurants   -----------------\n")

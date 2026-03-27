@@ -4,7 +4,12 @@ import pandas as pd
 import numpy as np
 
 def load_data():
-    return pd.read_csv("data/featured_restaurants.csv")
+    import os
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(BASE_DIR, "..", "data", "featured_restaurants.csv")
+    df = pd.read_csv(data_path)
+    return df
 
 '''def filter_by_cuisines(df, cuisines):
     if not cuisines:
@@ -31,8 +36,7 @@ def add_cuisine_boost(df, cuisines, boost_value=0.1):
     return df
 
 def get_recommendations(
-    city, cuisines, max_price, min_rating, top_n=10
-):
+    city, cuisines, max_price, min_rating, top_n=10):
     df = load_data()
     #Basic Filters
     df = df[df["location"].str.lower() == city.lower()]

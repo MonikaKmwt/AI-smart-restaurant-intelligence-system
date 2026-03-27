@@ -5,7 +5,12 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
 def load_data():
-    return pd.read_csv("data/cleaned_restaurants.csv")
+    import os
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(BASE_DIR, "..", "data", "cleaned_restaurants.csv")
+    df = pd.read_csv(data_path)
+    return df
 
 def normalize_features(df):
     scaler = MinMaxScaler()

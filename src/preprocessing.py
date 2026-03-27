@@ -3,8 +3,12 @@
 import pandas as pd
 import numpy as np
 
-def load_data(path):
-    df = pd.read_csv(path)
+def load_data():
+    import os
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(BASE_DIR, "..", "data", "2indian_restaurants.csv")
+    df = pd.read_csv(data_path)
     return df
 
 def explore_data(df):
@@ -34,7 +38,7 @@ def clean_data(df):
     return df
 
 def main():
-    input_path = "data/2indian_restaurants.csv"
+    
     df = load_data(input_path)
     df = clean_column_names(df)
     explore_data(df)
