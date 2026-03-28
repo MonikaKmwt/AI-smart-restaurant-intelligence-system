@@ -69,14 +69,11 @@ def get_similar_restaurants(df, similarity_matrix, restaurant_name, top_n=5):
         "average_price", "average_delivery_time"
     ]]
 
-def load_everything():
-    df = load_data()
-    similarity_matrix = compute_similarity_matrix(df)
-    return df, similarity_matrix
-
 def main():
+    df = load_data()
     df = cuisine_text(df)
-    df, similarity_matrix = load_everything()
+    similarity_matrix = compute_similarity_matrix(df)
+
     #print("\n-------------  Similarity Matrix is Created.    ---------------")
 
     print("\n---------------   Similar Restaurants   -----------------\n")

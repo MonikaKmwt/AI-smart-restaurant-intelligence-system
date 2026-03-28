@@ -33,9 +33,8 @@ st.write("...Loading data")
 df = load_cached_data()
 st.write("Data Loaded Successfully")
 
-similarity_matrix = get_similarity(df)
 #crashes when computing at once beacise dataset is large.
-#similarity_matrix = load_similarity(df)
+#similarity_matrix = get_similarity(df)
 #st.write("Similarity Matrix ready.")
 
 #----Session State'
