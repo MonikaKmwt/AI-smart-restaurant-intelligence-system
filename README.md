@@ -94,7 +94,7 @@ streamlit run app.py
 
 ## 🌍 Live Demo
 
-👉 (Add your Streamlit link here after deployment)
+👉 https://smart-restaurant-intelligence-system-qjz5zkwqwn78ugus7wp6nz.streamlit.app/
 
 ---
 
